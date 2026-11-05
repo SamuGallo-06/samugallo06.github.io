@@ -7,6 +7,20 @@
   </head>
   <body>
     <h1>Welcome to the SamuGallo-06 Repository</h1>
+    <h2>Adding the repository</h2>
+    First of all, add the repository’s public GPG key to your system
+    ```bash
+    curl -fsSL https://samugallo-06.github.io/samugallo06.github.io/pubkey.gpg | \ sudo tee /etc/apt/keyrings/tuorepo.gpg > /dev/null 
+    ```
+    Then, add the repository itself to your sources with add-apt-repository.<br/>
+    The signed-by option tells APT to trust only the key you just installed for this repository, and stable main selects the stable channel and its main component
+    ```bash
+    sudo add-apt-repository "deb [signed-by=/etc/apt/keyrings/tuorepo.gpg] https://samugallo-06.github.io/samugallo06.github.io stable main"
+    ```
+    Finally, refresh the package lists.
+    ```bash
+    sudo apt update
+    ```
     <h2>Noot</h2>
     <h2>Otus Browser</h2>
   </body>
